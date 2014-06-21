@@ -21,8 +21,7 @@ function seitensuche($forenseite) {
     preg_match_all ('/(<a href=\")(.*?)(\">Antworten<)/i',  $source, $matches);
     for ($i=0;$i<count($matches[2]);$i++) {
         $faden[] = $matches[2][$i];   
-    }
-   
+    }   
 }
 
 function suche_im_faden($fadenurl, $suchenach) {
@@ -33,6 +32,6 @@ function suche_im_faden($fadenurl, $suchenach) {
 }
 
 //Nutze php fadensuche.php ForumID Suchstring
-//php fadensuche b "Axel Stoll"
+//php fadensuche.php b "Axel Stoll"
 
 ?>
