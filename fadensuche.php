@@ -26,7 +26,9 @@ function seitensuche($forenseite) {
 
 function suche_im_faden($fadenurl, $suchenach) {
     $source = file_get_contents($fadenurl);
-    if(preg_match("/".strtolower($suchenach)."/",strtolower($source))) {
+    $source = preg_replace('!/\*.*?\*/!s', '', $source);
+    $source = preg_replace('/\n\s*\n/', "\n", $source);
+    if(preg_match("/".strtolower($suchenach)."/",strtolower(strip_tags($source)))) {
         echo "gefunden -> ".$fadenurl."\n";
     }
 }
